@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: appointment-system
+    runtime: docker
+    rootDir: Appointment-System
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /actuator/health

@@ -1,0 +1,3 @@
+package com.momin.appointmentsystem.controller;
+import com.momin.appointmentsystem.dto.*; import com.momin.appointmentsystem.implementations.AuthServiceImpl; import jakarta.validation.Valid; import lombok.RequiredArgsConstructor; import org.springframework.web.bind.annotation.*; import java.util.Map;
+@RestController @RequestMapping("/api/auth") @RequiredArgsConstructor public class AuthController { private final AuthServiceImpl auth; @PostMapping("/register") public Map<String,String> register(@Valid @RequestBody RegisterDTO d){return Map.of("token",auth.register(d));} @PostMapping("/login") public Map<String,String> login(@Valid @RequestBody LoginDTO d){return Map.of("token",auth.login(d));} }
